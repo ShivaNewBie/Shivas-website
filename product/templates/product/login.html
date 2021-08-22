@@ -69,6 +69,7 @@
     <input type="submit" name="" value="Login">
     {% for message in messages %}
     <p id='messages'>{{ message }}</p>
+    <a href="{% url 'product:register-user' %}" target="_parent"><button>Register</button></a>
   </div>
 
 
