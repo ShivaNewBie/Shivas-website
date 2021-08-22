@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@xetk_gh&cahd1n7@8b=^3=3zys9w))0tdlnf!ztx52ww#*zl&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['shivas-website.herokuapp.com','127.0.0.1']
 
