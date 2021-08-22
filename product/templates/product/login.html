@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -13,7 +14,9 @@
       padding: 0;
       height: 100%;
       background: rgb(199, 208, 210)
-    }
+    } -->
+{% block content %}
+    <style media="screen">
 
     .container-1 {
       font-family: 'Oswald', sans-serif;
@@ -54,6 +57,11 @@
     ::-webkit-input-placeholder {
       font-family: 'Oswald', sans-serif;
     }
+    .logon {
+      margin-bottom:30px;
+      align-items:center
+    }
+
   </style>
   <body>
 
@@ -66,16 +74,22 @@
   <div class="pass">
     <input type="password" name="password" value="" placeholder='Password'>
   </div>
-    <input type="submit" name="" value="Login">
-    {% for message in messages %}
-    <p id='messages'>{{ message }}</p>
-    <a href="{% url 'product:register-user' %}" target="_parent"><button>Register</button></a>
+    <div class="logon">
+      <input type="submit" name="" value="Login">
+  </div>
+  {% for message in messages %}
+  <p id='messages'>{{ message }}</p>
+  {% endfor %}
+  </form>
+        <div class="">
+            Don't have an account? <a href="{% url 'product:register-user' %}">Register</a>
+        </div>
+        </div>
   </div>
 
 
-</form>
-{% endfor %}
+
 
 </body>
 
-</html>
+{% endblock %}
