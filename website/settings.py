@@ -124,4 +124,4 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/images/'
-MEDIA_ROOT = 'staticfiles/media/'
+MEDIA_ROOT = 'static/media/'
