@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form  action="." method="post">{% csrf_token %}
+  <h1>Do you want to delete the product "{{product.prodname }}"?</h1>
+  <p><input type="submit" name="" value="Yes"></p>
+  <a href="{% url 'product:user-view' %}">Cancel</a>
+</form>
+{% endblock %}

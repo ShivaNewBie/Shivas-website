@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <style media="screen">
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: rgb(199, 208, 210)
+    }
+
+    .container-1 {
+      font-family: 'Oswald', sans-serif;
+      width: 300px;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      background: rgb(255, 133, 82);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+
+    }
+
+    .name {
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
+    .pass {
+      margin-bottom: 50px;
+    }
+
+    #messages {
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    ::-webkit-input-placeholder {
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+  <body>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="container-1">
+    <div class="name">
+    <input type="text" name="username" placeholder="Username..." class="form-control">
+  </div>
+  <div class="pass">
+    <input type="password" name="password" value="" placeholder='Password'>
+  </div>
+    <input type="submit" name="" value="Login">
+    {% for message in messages %}
+    <p id='messages'>{{ message }}</p>
+  </div>
+
+
+</form>
+{% endfor %}
+
+</body>
+
+</html>

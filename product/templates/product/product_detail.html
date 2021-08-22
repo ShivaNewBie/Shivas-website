@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>{{ product.creator}}</p>
+<p>{{ product.prodname}}</p>
+<p>{{ product.description}}</p>
+<p>{{ product.price}}</p>
+<p>{{ product.id }}</p>
+<p>{{ product.likes }}</p>
+
+<img src="{{ product.image.url }}" width="10%" height="10%">
+{% for instance in product.comments.all %}
+<li>{{ instance.user}}</li>
+  {{ instance.description}}
+  {{ instance.timestamps}}
+{% endfor %}
+
+<form class="" action="." method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" name="" value="Comment">
+</form>
+<br>
+<form class="" action="index.html" method="post">
+
+</form>
+{% endblock %}

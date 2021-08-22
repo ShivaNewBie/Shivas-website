@@ -1,0 +1,48 @@
+
+<style media="screen">
+
+nav {
+  margin: 0;
+  padding: 0;
+  height: 150px;
+  border-style: solid black;
+  font-family: 'Oswald', sans-serif;
+  background: rgb(57, 57, 58);
+  text-color: red
+  position: relative
+}
+.test-1{
+  text-align: left;
+  line-height:40px;
+  margin-left: 10px;
+}
+ul {
+  list-style: none
+
+}
+li:hover {
+    color:red;
+}
+.prof-right {
+  text-align: right
+
+}
+</style>
+<nav>
+<div class="test-1">
+
+<ul>
+  <a href="{% url 'home-view' %}"><li>Home</li></a>
+  <a href="#"><li>About</li></a>
+  <a href="#"><li>Contact</li></a>
+
+</ul>
+</div>
+<div class="prof-right">
+<span><a href="{% url 'product:user-view' %}">My user profile</a></span>
+<span><a href="{% url 'product:register-user' %}">Register</a></span>
+<span><a href="{% url 'product:login-user' %}">Login</a></span>
+<span><a href="{% url 'product:logout-user' %}">Logout</a></span>
+</div>
+
+</nav>

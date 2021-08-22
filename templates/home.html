@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello</h1>
+{% for instance in product %}
+
+  <p><a href="{{ instance.get_absolute_url}}">{{ instance.id }}</a> - {{ instance.prodname }} - {{ instance.description }} - {{ instance.price }} - <img src="{{ instance.image.url}}" width="10%" height="10%"> -   {{ instance.creator }}</p>
+<form class="" action="{% url 'product:like-post' %}" method="post">{% csrf_token %}
+<input type="hidden" name="product_id" value="{{instance.id}}">
+{% if user not in instance.likes.all %}
+<button type="submit" name="button">Like</button>
+{% else %}
+<button type="submit" name="button">Unlike</button>
+
+{% endif %}
+</form>
+<strong>{{ instance.likes.all.count }} likes</strong>
+
+
+{% endfor %}
+{% endblock %}
+<!-- <table>
+  <tr>
+    <td>{{ instance.creator }}</td>
+    <td>{{ instance.prodname }}</td>
+    <td>{{ instance.description }}</td>
+    <td>{{ instance.price }}</td>
+    <td><img src="{{ instance.image.url}}" width="10%" height="10%"></td>
+    <a href="{{ instance.get_absolute_url}}">{{ instance.id }}</a>
+
+  <tr>
+<table> -->

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>hello, {{ user.username }}</h1>
+<span><a href="{% url 'product:product-create' %}">Create a product</a></span>
+<br>
+
+{% for instance in product %}
+<p>
+    <!--allows us to update each of the product -->
+   <li><a href="{% url 'product:product-update' instance.pk %}">update</a></li>
+   <li><a href="{% url 'product:product-delete' instance.pk %}">delete</a></li>
+
+  {{ instance.creator }}
+  {{ instance.prodname }}
+  {{ instance.description }}
+  {{ instance.price }}
+<img src="{{ instance.image.url }}" width="10%" height="10%"></p>
+{% endfor %}
+{% endblock %}
