@@ -1,99 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-<style media="screen">
-  html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: rgb(199, 208, 210)
-  }
+{% extends 'base.html' %}
 
-  .container-1 {
-    font-family: 'Oswald', sans-serif;
-    width: 300px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    background: rgb(255, 133, 82);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+{% block content %}
 
+<form method="post">
 
-  }
-
-  ::-webkit-input-placeholder {
-    font-family: 'Oswald', sans-serif;
-  }
-
-  input[type="submit"] {
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px
-  }
-
-  #hello {
-    color: rgb(245, 245, 245);
-  }
-
-  .box-1 {
-    margin-top: 30px;
-    margin-bottom: 50px;
-
-  }
-
-  .box-2 {
-    margin-bottom: 50px;
-
-  }
-
-  .box-3 {
-    margin-bottom: 50px;
-
-  }
-
-  .box-4 {
-    margin-bottom: 50px;
-
-  }
-</style>
-  </head>
-  <body>
-
-<form class="my_form" action="" method="post"> {% csrf_token %}
-  <div class="container-center">
-    <div class="container-1">
-      <h1 id='hello'>Register account</h1>
-      <div class="box-1">
-        {{ form.username }}
-      </div>
-      <div class="box-2">
-        {{ form.email }}
-      </div>
-      <div class='box-3'>
-        {{ form.password1}}
-      </div>
-      <div class="box-4">
-        {{ form.password2 }}
-      </div>
-      {{ form.errors }}
-
-      <input type="submit" name="create user" value='Register now'>
-    </div>
-  </div>
-
+  {% csrf_token %}
+  {{ form.as_p}}
+<input type="submit" name="" value="Register">
+  {{ form.errors }}
 </form>
-</body>
-</html>
+
+{% endblock %}
